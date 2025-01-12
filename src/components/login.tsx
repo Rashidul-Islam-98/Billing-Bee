@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <nav className="bg-neutral-50	">
@@ -47,6 +50,23 @@ const Navbar = () => {
 };
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    const validEmail = "rashidul@gmail.com";
+    const validPassword = "Rashidul@123";
+
+    if (email === validEmail && password === validPassword) {
+      setError("");
+      navigate("/home");
+    } else {
+      setError("Invalid email or password.");
+    }
+  }; 
   return (
     <div>
       <Navbar />
@@ -56,7 +76,7 @@ const Login = () => {
             <img src="src\assets\eurosia_logo.jpg" alt="Logo" className="w-12 h-12" />
           </div>
           <h2 className="mt-6 text-3xl font-extrabold text-center text-gray-900">Login to BillingBee</h2>
-          <form className="mt-8 space-y-6">
+          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
                 <label htmlFor="email-address" className="sr-only">Email address</label>
@@ -68,6 +88,8 @@ const Login = () => {
                   required
                   className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="jane@example.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div>
@@ -80,9 +102,14 @@ const Login = () => {
                   required
                   className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </div>
+            {error && (
+              <div className="text-red-500 text-sm mt-2">{error}</div>
+            )}
             <div className="flex items-center justify-between">
               <div className="text-sm">
                 <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">Forgot Password?</a>
