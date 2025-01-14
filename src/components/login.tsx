@@ -22,8 +22,7 @@ const Navbar = () => {
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0">
-              <img className="block lg:hidden h-8 w-auto" src="src\assets\eurosia_logo.jpg" alt="Logo" />
-              <img className="hidden lg:block h-8 w-auto" src="src\assets\eurosia_logo.jpg" alt="Logo" />
+              <img className="block h-8 w-auto" src="https://res.cloudinary.com/dneeqhmmc/image/upload/v1736857750/Eurosia/eurosia_logo_leqtim.jpg" alt="Logo" />
             </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
@@ -73,7 +72,7 @@ const Login = () => {
       <div className="flex items-center justify-center min-h-screen bg-gray-100">
         <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-2xl shadow-md">
           <div className="flex justify-center">
-            <img src="src\assets\eurosia_logo.jpg" alt="Logo" className="w-12 h-12" />
+            <img src="https://res.cloudinary.com/dneeqhmmc/image/upload/v1736857750/Eurosia/eurosia_logo_leqtim.jpg" alt="Logo" className="w-12 h-12" />
           </div>
           <h2 className="mt-6 text-3xl font-extrabold text-center text-gray-900">Login to BillingBee</h2>
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>

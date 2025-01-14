@@ -61,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleSidebar }) => {
             className="w-96 px-4 py-2 rounded-full outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
           />
           <img
-            src="src/assets/profile.jpg"
+            src="https://i.ibb.co.com/bzK7Ww7/profile.jpg"
             alt="avatar"
             className="w-10 h-10 rounded-full"
             onClick={toggleProfile}
